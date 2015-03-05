@@ -12,7 +12,13 @@
 
 STATIC_LIB 	= libfts.a
 
-SRC 		= ft_isdigit.s 
+SRC 		= 	ft_isdigit.s \
+				ft_isascii.s \
+				ft_isalnum.s \
+				ft_isalpha.s \
+				ft_isprint.s \
+				ft_toupper.s \
+				ft_tolower.s
 
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
 DEBUG_OBJ	= $(patsubst %.s,$(DEBUG_DIR)/%.o,$(SRC))
