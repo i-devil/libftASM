@@ -25,5 +25,6 @@ int 				ft_tolower(int c);
 void				ft_bzero(void *s, int n);
 int 				ft_puts(const char *s);
 size_t				ft_strlen(const char *s);
+char				*ft_strcat(char *restrict s1, const char *restrict s2);
 
 #endif

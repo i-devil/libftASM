@@ -21,7 +21,8 @@ SRC 		= 	ft_isdigit.s 	\
 				ft_tolower.s 	\
 				ft_bzero.s 		\
 				ft_puts.s 		\
-				ft_strlen.s
+				ft_strlen.s 	\
+				ft_strcat.s
 
 
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
