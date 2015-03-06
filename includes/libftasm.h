@@ -21,5 +21,7 @@ int					ft_isalpha(int c);
 int					ft_isprint(int c);
 int 				ft_toupper(int c);
 int 				ft_tolower(int c);
+void				ft_bzero(void *s, int n);
+int 				ft_puts(const char *s);
 
 #endif
