@@ -13,6 +13,7 @@
 #ifndef LIBFTASM_H
 # define LIBFTASM_H
 
+#include <string.h>
 
 int					ft_isdigit(int c);
 int					ft_isascii(int c);
@@ -23,5 +24,6 @@ int 				ft_toupper(int c);
 int 				ft_tolower(int c);
 void				ft_bzero(void *s, int n);
 int 				ft_puts(const char *s);
+size_t				ft_strlen(const char *s);
 
 #endif
