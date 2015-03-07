@@ -4,6 +4,8 @@ global	_ft_strcat
 
 _ft_strcat:
 	push	rdi
+
+
 	mov 	rcx, rsi
 	mov 	rax, 0
 

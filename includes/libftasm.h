@@ -26,5 +26,14 @@ void				ft_bzero(void *s, int n);
 int 				ft_puts(const char *s);
 size_t				ft_strlen(const char *s);
 char				*ft_strcat(char *restrict s1, const char *restrict s2);
+void 				*memcpy(void *restrict dst, const void *restrict src, size_t n);
+void				*memset(void *b, int c, size_t len);
+
+
+int				ft_putchar(char c);
+int				ft_min(int a, int b);
+int				ft_max(int a, int b);
+int				ft_abs(int a);
+int				ft_isspace(int c);
 
 #endif
