@@ -3,15 +3,16 @@ section .text
 global	_ft_min
 
 _ft_min:
+		cmp		rdi, 0
+		jl 		_neg
 		cmp		rdi, rsi
 		jle		_min 
-		cmp		rdi, rsi
-		jg		_max	
+		mov		rax, rsi
+
+_neg:
+		mov 	rax, rdi
+		ret
 
 _min:
 		mov		rax, rdi
-		ret
-
-_max:
-		mov		rax, rsi
 		ret

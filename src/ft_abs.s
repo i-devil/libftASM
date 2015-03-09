@@ -3,14 +3,16 @@ section .text
 global _ft_abs
 
 _ft_abs:
-		cmp		rdi, 0
+		mov		rcx, 0
+		cmp		rdi, rcx
 		jl		_neg
-		cmp		rdi, 0
+		cmp		rdi, rcx
 		jge		_ret
 
 _neg:
-		not		rdi
-		jmp		_ret
+		sub		rcx, rdi
+		mov		rax, rdi
+		ret
 
 _ret:
 		mov		rax, rdi

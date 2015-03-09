@@ -110,6 +110,25 @@ void		check_isascii(void)
 	printf("[-] END OF ISASCII [-]\n");
 }
 
+void		check_isprint(void)
+{
+	printf("[-] ISPRINT [-]\n");
+	printf("[+] Test on %c : %d, return = %d [+]\n", 'a', 'a', ft_isprint('a'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", 'z', 'z', ft_isprint('z'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", 'A', 'A', ft_isprint('A'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", 'Z', 'Z', ft_isprint('Z'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", 245, 245, ft_isprint(245));
+	printf("[+] Test on %c : %d, return = %d [+]\n", 221, 221, ft_isprint(221));
+	printf("[+] Test on %c : %d, return = %d [+]\n", ' ', ' ', ft_isprint(' '));
+	printf("[+] Test on %c : %d, return = %d [+]\n", '+', '+', ft_isprint('+'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", ')', ')', ft_isprint(')'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", '>', '>', ft_isprint('>'));
+	printf("[+] Test on %c : %d, return = %d [+]\n", '\\', '\\', ft_isprint('\\'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isprint(0));
+	printf("[-] END OF ISPRINT [-]\n");
+}
+
 void		check_bzero(void)
 {
 	char	str[4] = "jui";
@@ -308,7 +327,7 @@ void		check_max(void)
 {
 	printf("[-] MAX [-]\n");
 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_max(1, 2));
-	printf("[+] Test on [-15, 3], return = %d [+]\n", ft_max(-15, 3));
+	printf("[+] Test on [-3, 0], return = %d [+]\n", ft_max(-3, 0));
 	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_max(-15, -30));
 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_max(-5, -5));
 	printf("[-] Test with NULL [-]\n");
@@ -320,8 +339,8 @@ void		check_min(void)
 {
 	printf("[-] MIN [-]\n");
 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_min(1, 2));
-	printf("[+] Test on [-15, 3], return = %d [+]\n", ft_min(-15, 3));
-	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_min(-15, -30));
+	printf("[+] Test on [-3, 3], return = %d [+]\n", ft_min(-3, 3));
+	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_min(-30, -15));
 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_min(-5, -5));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_min(0, 0));
@@ -362,23 +381,22 @@ void		check_islower(void)
 
 int			main(void)
 {
-	/*ft_nebre();
-	check_digit();
-	printf("\n");
-	check_alpha();
-	printf("\n");
-	check_alnum();
-	printf("\n");
-	check_tolower();
-	printf("\n");
-	check_toupper();
-	printf("\n");*/
+	//check_digit();
+	//printf("\n");
+	//check_alpha();
+	//printf("\n");
+	//check_alnum();
+	//printf("\n");
+	//check_tolower();
+	//printf("\n");
+	//check_toupper();
+	//printf("\n");
 	//check_puts();
 	//printf("\n");
-	/*check_isascii();
-	printf("\n");
-	check_bzero();
-	printf("\n");*/
+	//check_isascii();
+	//printf("\n");
+	//check_bzero();
+	//printf("\n");
 	//check_memalloc();
 	//printf("\n");
 	//check_strlen();
@@ -393,6 +411,8 @@ int			main(void)
 	//printf("\n");
 	//check_b();
 	//printf("\n");
+	//check_isprint();
+	//printf("\n");
 	check_isspace();
 	printf("\n");
 	check_abs();
@@ -401,9 +421,9 @@ int			main(void)
 	printf("\n");
 	check_max();
 	printf("\n");
-	check_isupper();
-	printf("\n");
-	check_islower();
-	printf("\n");
+	//check_isupper();
+	//printf("\n");
+	//check_islower();
+	//printf("\n");
 	return 0;
 }
