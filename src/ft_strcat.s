@@ -6,14 +6,14 @@ _ft_strcat:
 		push	rdi
 
 _loop1:
-		cmp		rdi, '0'
+		cmp		byte[rdi], 0x0
 		je		_loop2
 		inc		rdi
 		jmp		_loop1
 
 
 _loop2:
-		cmp		rsi, '0'
+		cmp		byte[rsi], 0x0
 		je		_ret
 		movsb
 		jmp		_loop2
