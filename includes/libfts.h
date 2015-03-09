@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libfts.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ide-vill <iris.devillars@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/09 21:19:08 by ide-vill          #+#    #+#             */
+/*   Updated: 2015/03/09 21:19:21 by ide-vill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFTS_H
 # define LIBFTS_H
@@ -21,10 +31,11 @@ void				*ft_memset(void *b, int c, size_t len);
 char				*ft_strdup(const char *s1);
 void				ft_cat(int fd);
 
-int				ft_putchar(char c);
-int				ft_min(int a, int b);
-int				ft_max(int a, int b);
-int				ft_abs(int a);
-int				ft_isspace(int c);
+int					ft_min(int a, int b);
+int					ft_max(int a, int b);
+int					ft_abs(int a);
+int					ft_isspace(int c);
+int 				ft_isupper(int c);
+int 				ft_islower(int c);
 
 #endif

@@ -209,7 +209,7 @@ void		check_memset(void)
 {
 	printf("[+] MEMSET [+]\n");
 	printf("[-] Befor memset: %s [-]\n", "abcd");
-	printf("[-] After memset: %s [-]\n", (char*)ft_memset(strdup("abcd"), 'A', 3));
+	printf("[-] After memset: %s [-]\n", (char*)ft_memset(ft_strdup("abcd"), 'A', 3));
 	printf("[+] END OF MEMSET [+]\n");
 }
 
@@ -275,6 +275,91 @@ void		check_cat(void)
 	printf("[+] END OF FT_STRCPY [+]\n");
 }*/
 
+void		check_isspace(void)
+{
+	printf("[-] ISSPACE [-]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isspace('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isspace('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isspace('*'));
+	printf("[+] Test on %c, return = %d [+]\n", ' ', ft_isspace(' '));
+	printf("[+] Test on \\n, return = %d [+]\n", ft_isspace('\n'));
+	printf("[+] Test on \\t, return = %d [+]\n", ft_isspace('\t'));
+	printf("[+] Test on \\v, return = %d [+]\n", ft_isspace('\v'));
+	printf("[+] Test on \\f, return = %d [+]\n", ft_isspace('\f'));
+	printf("[+] Test on \\r, return = %d [+]\n", ft_isspace('\r'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isspace(0));
+	printf("[-] END OF ISSPACE [-]\n");
+}
+
+void		check_abs(void)
+{
+	printf("[-] ABS [-]\n");
+	printf("[+] Test on %d, return = %d [+]\n", -1, ft_abs(-1));
+	printf("[+] Test on %d, return = %d [+]\n", 0, ft_abs(0));
+	printf("[+] Test on %d, return = %d [+]\n", 1000000, ft_abs(1000000));
+	printf("[+] Test on %d, return = %d [+]\n", -15, ft_abs(-15));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_abs(0));
+	printf("[-] END OF ABS [-]\n");
+}
+
+void		check_max(void)
+{
+	printf("[-] MAX [-]\n");
+	printf("[+] Test on [1, 2], return = %d [+]\n", ft_max(1, 2));
+	printf("[+] Test on [-15, 3], return = %d [+]\n", ft_max(-15, 3));
+	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_max(-15, -30));
+	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_max(-5, -5));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_max(0, 0));
+	printf("[-] END OF MAX [-]\n");
+}
+
+void		check_min(void)
+{
+	printf("[-] MIN [-]\n");
+	printf("[+] Test on [1, 2], return = %d [+]\n", ft_min(1, 2));
+	printf("[+] Test on [-15, 3], return = %d [+]\n", ft_min(-15, 3));
+	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_min(-15, -30));
+	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_min(-5, -5));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_min(0, 0));
+	printf("[-] END OF MIN [-]\n");
+}
+
+void		check_isupper(void)
+{
+	printf("[-] ISUPPER [-]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isupper('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isupper('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isupper('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isupper('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isupper('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isupper('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isupper('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isupper('4'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isupper(0));
+	printf("[-] END OF ISUPPER [-]\n");
+}
+
+void		check_islower(void)
+{
+	printf("[-] ISLOWER [-]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_islower('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_islower('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_islower('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_islower('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_islower('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_islower('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_islower('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_islower('4'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_islower(0));
+	printf("[-] END OF ISLOWER [-]\n");
+}
+
 int			main(void)
 {
 	/*ft_nebre();
@@ -300,13 +385,25 @@ int			main(void)
 	//printf("\n");
 	//check_strdup();
 	//printf("\n");
-	check_memset();
-	printf("\n");
+	//check_memset();
+	//printf("\n");
 	//check_memcpy();
 	//printf("\n");
 	//check_strcat();
 	//printf("\n");
 	//check_b();
 	//printf("\n");
+	check_isspace();
+	printf("\n");
+	check_abs();
+	printf("\n");
+	check_min();
+	printf("\n");
+	check_max();
+	printf("\n");
+	check_isupper();
+	printf("\n");
+	check_islower();
+	printf("\n");
 	return 0;
 }

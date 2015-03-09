@@ -29,7 +29,10 @@ SRC 		= 	ft_isdigit.s \
 				ft_abs.s \
 				ft_min.s \
 				ft_max.s  \
-				ft_cat.s
+				ft_cat.s \
+				ft_isspace.s \
+				ft_islower.s \
+				ft_isupper.s
 
 
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))

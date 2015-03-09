@@ -9,9 +9,9 @@ _ft_max:
 		jl		_min
 
 _max:
-		mov		rax, rdi
+		mov		rax, rsi
 		ret
 
 _min:
-		mov		rax, rsi
+		mov		rax, rdi
 		ret
