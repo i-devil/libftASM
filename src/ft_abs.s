@@ -3,14 +3,12 @@ section .text
 global _ft_abs
 
 _ft_abs:
-		mov		esi, 0
-		cmp		edi, esi
+		cmp		edi, 0
 		jl		_neg
 		mov		eax, edi
-		jmp		_ret
+		ret
 
 _neg:
-		not		edi
-
-_ret:
+		sub		edi, 0
+		mov		eax, edi
 		ret

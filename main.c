@@ -343,6 +343,17 @@ void		check_islower(void)
 	printf("[------] END OF FT_ISLOWER [------]\n");
 }
 
+void		check_putchar(void)
+{
+	printf("[------] FT_PUTCHAR [------]\n");
+	ft_putchar('a');
+	ft_putchar('\n');
+	ft_putchar('b');
+	printf("\nDoit afficher : a\\nb\n");
+
+	printf("[------] END OF FT_PUTCHAR [------]\n");
+}
+
 int			main(void)
 {
 	//PART 1
@@ -397,6 +408,8 @@ int			main(void)
 	check_isupper();
 	printf("\n");
 	check_islower();
+	printf("\n");
+	check_putchar();
 	printf("\n");
 
 	printf("[------] END OF TESTS [------] \n");

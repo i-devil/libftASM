@@ -43,5 +43,6 @@ int					ft_abs(int a);
 int					ft_isspace(int c);
 int 				ft_isupper(int c);
 int 				ft_islower(int c);
+void				ft_putchar(char c);
 
 #endif

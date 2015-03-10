@@ -3,24 +3,21 @@ section .text
 global _ft_isspace
 
 _ft_isspace:
-		cmp		rdi, 9
+		cmp		edi, 9 
 		je		_reto
-		cmp		rdi, 27
+		cmp		edi, 10
 		je		_reto
-		cmp		rdi, 13
+		cmp		edi, 13
 		je		_reto
-		cmp		rdi, 11
+		cmp		edi, 11
 		je		_reto
-		cmp		rdi, 28
+		cmp		edi, 28
 		je		_reto
-		cmp		rdi, 32
+		cmp		edi, 32
 		je		_reto
-		jmp		_retz
+		mov		eax, 0
+		ret
 
 _reto:
-		mov		rax, 1
+		mov		eax, 1
 		ret 
-
-_retz:
-		mov		rax, 0
-		ret
