@@ -5,7 +5,7 @@
 %define MAC_SYSCALL(nb)		0x2000000 | nb
 
 section .bss
-		buf resb	BUFF_SIZE	
+		buffer	resb		BUFF_SIZE
 
 
 section .text
@@ -14,24 +14,22 @@ global _ft_cat
 
 _ft_cat:
 		push	rbp
-		mov		rsp, rbp
-		mov		rsi, buf
-		and		rsp, -16
-
-		lea 	rsi, [rel buf]
+		mov		rbp, rsp
 
 _start:
-		mov		rdi, [rbp - 8]
+		push	rdi
+		mov		rsi, buffer
 		mov		rdx, BUFF_SIZE
 		mov		rax, MAC_SYSCALL(READ)
 		syscall
 		jc		_end
 		cmp		rax, 0
-		je		_end
+		jle		_end
 		mov		rdi, STDOUT
 		mov		rdx, rax
 		mov		rax, MAC_SYSCALL(WRITE)
 		syscall
+		pop		rdi
 		jmp		_start
 
 
