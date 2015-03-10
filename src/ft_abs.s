@@ -3,17 +3,19 @@ section .text
 global _ft_abs
 
 _ft_abs:
-		mov		rcx, 0
-		cmp		rdi, rcx
+		pushs	rbp
+		mov		rbp, rsp
+
+		mov		eax, 0
+		cmp		edi, eax
 		jl		_neg
-		cmp		rdi, rcx
-		jge		_ret
+		mov		eax, edi
+		jmp		_ret
 
 _neg:
-		sub		rcx, rdi
-		mov		rax, rdi
-		ret
+		sub		eax, edi
 
 _ret:
-		mov		rax, rdi
+		mov 	rsp, rbp
+		push 	rbp
 		ret
