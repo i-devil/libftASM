@@ -4,29 +4,26 @@ global	_ft_strdup
 extern	_malloc, _ft_strlen, _ft_memcpy
 
 _ft_strdup:
-		push	rdi
+		push	rbp
+		mov		rbp, rsp
 
+		mov		rbx, rdi
 		call	_ft_strlen
-		mov		rdx, rax
-		add		rdx, 1
-
-		pop		rdi;
-		mov		rsi, rdi
-
+		mov		rdi, rax
+		add		rdi, 1
 		push	rdi
 
 		call	_malloc
 		test	rax, rax
 		jz		_fail_exit
-		
-		pop		rdi
+
 		mov		rdi, rax
+		mov		rsi, rbx
+		pop		rdx
 
 		call	_ft_memcpy
 
 _fail_exit:
-		mov		rax, 1
-		pop		rbx
+		mov		rsp, rbp
+		pop		rbp
 		ret
-
-
