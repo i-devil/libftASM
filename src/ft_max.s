@@ -3,16 +3,18 @@ section .text
 global	_ft_max
 
 _ft_max:
-		cmp		rdi, 0
-		jl		_neg
-		cmp		rdi, rsi
-		jz		_max
-		mov		rax, rsi
+		push	rbp
+		mov		rbp, rsp
 
-_neg:
-		mov		rax, rsi
-		ret
+		cmp		edi, esi
+		jg		_max
+		mov		eax, esi
+		jmp		_end
 
 _max:
-		mov		rax, rdi
+		mov		eax, edi
+
+_end:
+		mov		rsp, rbp
+		push	rbp
 		ret
