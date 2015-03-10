@@ -16,41 +16,43 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-void		check_alnum(void)
+
+/* PART 1 */
+
+void		check_bzero(void)
 {
-	printf("[-] ALNUM [-]\n");
-	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isalnum('a'));
-	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isalnum('z'));
-	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isalnum('*'));
-	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isalnum('Z'));
-	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isalnum('A'));
-	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isalnum('0'));
-	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isalnum('9'));
-	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isalnum('4'));
+	char	str[4] = "jui";
+
+	printf("[------] FT_BZERO [------]\n");
+	printf("[+] str[0] = %d = %c [+]\n", str[0], str[0]);
+	printf("[+] str[1] = %d = %c [+]\n", str[1], str[1]);
+	printf("[+] str[2] = %d = %c [+]\n", str[2], str[2]);
+	printf("[-] FT_BZERO DONE [-]\n");
+	ft_bzero(str, 3);
+	printf("[+] str[0] = %d = %c [+]\n", str[0], str[0]);
+	printf("[+] str[1] = %d = %c [+]\n", str[1], str[1]);
+	printf("[+] str[2] = %d = %c [+]\n", str[2], str[2]);
 	printf("[-] Test with NULL [-]\n");
-	printf("[+] Test return = %d [+]\n", ft_isalnum(0));
-	printf("[-] END OF ALNUM [-]\n");
+	ft_bzero(NULL, 0);
+	printf("[------] END OF FT_BZERO [------]\n");
 }
 
-void		check_digit(void)
+void		check_strcat(void)
 {
-	printf("[-] DIGIT [-]\n");
-	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isdigit('a'));
-	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isdigit('z'));
-	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isdigit('*'));
-	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isdigit('Z'));
-	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isdigit('A'));
-	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isdigit('0'));
-	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isdigit('9'));
-	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isdigit('4'));
-	printf("[-] Test with NULL [-]\n");
-	printf("[+] Test return = %d [+]\n", ft_isdigit(0));
-	printf("[-] END OF DIGIT [-]\n");
+	char		str[5];
+
+	str[0] = '\0';
+	printf("[------] FT_STRCAT [------]\n");
+	printf("[+] Str init with empy char : %s [+]\n", ft_strcat(str, ""));
+	printf("[+] Str: %s [+]\n", ft_strcat(str, "h"));
+	printf("[+] Str: %s [+]\n", ft_strcat(str, "ello"));
+	printf("[+] Str: %s [+]\n", ft_strcat(str, "!"));
+	printf("[------] END OF FT_STRCAT [------]\n");
 }
 
 void		check_alpha(void)
 {
-	printf("[-] ALPHA [-]\n");
+	printf("[------] FT_ISALPHA [------]\n");
 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isalpha('a'));
 	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isalpha('z'));
 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isalpha('*'));
@@ -61,44 +63,44 @@ void		check_alpha(void)
 	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isalpha('4'));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isalpha(0));
-	printf("[-] END OF ALPHA [-]\n");
+	printf("[------] END OF FT_ISALPHA [------]\n");
 }
 
-void		check_tolower(void)
+void		check_digit(void)
 {
-	printf("[-] TOLOWER [-]\n");
-	printf("[+] Test on %c, return = %c [+]\n", 'a', ft_tolower('a'));
-	printf("[+] Test on %c, return = %c [+]\n", 'z', ft_tolower('z'));
-	printf("[+] Test on %c, return = %c [+]\n", '*', ft_tolower('*'));
-	printf("[+] Test on %c, return = %c [+]\n", 'Z', ft_tolower('Z'));
-	printf("[+] Test on %c, return = %c [+]\n", 'A', ft_tolower('A'));
-	printf("[+] Test on %c, return = %c [+]\n", '0', ft_tolower('0'));
-	printf("[+] Test on %c, return = %c [+]\n", '9', ft_tolower('9'));
-	printf("[+] Test on %c, return = %c [+]\n", '4', ft_tolower('4'));
+	printf("[------] FT_ISDIGIT [------]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isdigit('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isdigit('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isdigit('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isdigit('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isdigit('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isdigit('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isdigit('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isdigit('4'));
 	printf("[-] Test with NULL [-]\n");
-	printf("[+] Test return = %c [+]\n", ft_tolower(0));
-	printf("[-] END OF TOLOWER [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isdigit(0));
+	printf("[------] END OF FT_ISDIGIT [------]\n");
 }
 
-void		check_toupper(void)
+void		check_alnum(void)
 {
-	printf("[-] TOUPPER [-]\n");
-	printf("[+] Test on %c, return = %c [+]\n", 'a', ft_toupper('a'));
-	printf("[+] Test on %c, return = %c [+]\n", 'z', ft_toupper('z'));
-	printf("[+] Test on %c, return = %c [+]\n", '*', ft_toupper('*'));
-	printf("[+] Test on %c, return = %c [+]\n", 'Z', ft_toupper('Z'));
-	printf("[+] Test on %c, return = %c [+]\n", 'A', ft_toupper('A'));
-	printf("[+] Test on %c, return = %c [+]\n", '0', ft_toupper('0'));
-	printf("[+] Test on %c, return = %c [+]\n", '9', ft_toupper('9'));
-	printf("[+] Test on %c, return = %c [+]\n", '4', ft_toupper('4'));
+	printf("[------] FT_ISALNUM [------]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isalnum('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isalnum('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isalnum('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isalnum('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isalnum('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isalnum('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isalnum('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isalnum('4'));
 	printf("[-] Test with NULL [-]\n");
-	printf("[+] Test return = %c [+]\n", ft_toupper(0));
-	printf("[-] END OF TOUPPER [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isalnum(0));
+	printf("[------] END OF FT_ISALNUM [-------]\n");
 }
 
 void		check_isascii(void)
 {
-	printf("[-] ISASCII [-]\n");
+	printf("[------] FT_ISASCII [------]\n");
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'a', 'a', ft_isascii('a'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'z', 'z', ft_isascii('z'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'A', 'A', ft_isascii('A'));
@@ -107,12 +109,12 @@ void		check_isascii(void)
 	printf("[+] Test on %c : %d, return = %d [+]\n", 221, 221, ft_isascii(221));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isascii(0));
-	printf("[-] END OF ISASCII [-]\n");
+	printf("[------] END OF FT_ISASCII [------]\n");
 }
 
 void		check_isprint(void)
 {
-	printf("[-] ISPRINT [-]\n");
+	printf("[------] FT_ISPRINT [------]\n");
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'a', 'a', ft_isprint('a'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'z', 'z', ft_isprint('z'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", 'A', 'A', ft_isprint('A'));
@@ -126,65 +128,75 @@ void		check_isprint(void)
 	printf("[+] Test on %c : %d, return = %d [+]\n", '\\', '\\', ft_isprint('\\'));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isprint(0));
-	printf("[-] END OF ISPRINT [-]\n");
+	printf("[------] END OF FT_ISPRINT [------]\n");
 }
 
-void		check_bzero(void)
+void		check_toupper(void)
 {
-	char	str[4] = "jui";
-
-	printf("[-] BZERO [-]\n");
-	printf("[+] str[0] = %d = %c [+]\n", str[0], str[0]);
-	printf("[+] str[1] = %d = %c [+]\n", str[1], str[1]);
-	printf("[+] str[2] = %d = %c [+]\n", str[2], str[2]);
-	printf("[-] FT_BZERO DONE [-]\n");
-	ft_bzero(str, 3);
-	printf("[+] str[0] = %d = %c [+]\n", str[0], str[0]);
-	printf("[+] str[1] = %d = %c [+]\n", str[1], str[1]);
-	printf("[+] str[2] = %d = %c [+]\n", str[2], str[2]);
+	printf("[------] FT_TOUPPER [------]\n");
+	printf("[+] Test on %c, return = %c [+]\n", 'a', ft_toupper('a'));
+	printf("[+] Test on %c, return = %c [+]\n", 'z', ft_toupper('z'));
+	printf("[+] Test on %c, return = %c [+]\n", '*', ft_toupper('*'));
+	printf("[+] Test on %c, return = %c [+]\n", 'Z', ft_toupper('Z'));
+	printf("[+] Test on %c, return = %c [+]\n", 'A', ft_toupper('A'));
+	printf("[+] Test on %c, return = %c [+]\n", '0', ft_toupper('0'));
+	printf("[+] Test on %c, return = %c [+]\n", '9', ft_toupper('9'));
+	printf("[+] Test on %c, return = %c [+]\n", '4', ft_toupper('4'));
 	printf("[-] Test with NULL [-]\n");
-	ft_bzero(NULL, 0);
-	printf("[-] END OF BZERO [-]\n");
+	printf("[+] Test return = %c [+]\n", ft_toupper(0));
+	printf("[------] END OF FT_TOUPPER [------]\n");
 }
 
-/*void		        check_memalloc(void)
+void		check_tolower(void)
 {
-	char    *str;
+	printf("[------] FT_TOLOWER [------]\n");
+	printf("[+] Test on %c, return = %c [+]\n", 'a', ft_tolower('a'));
+	printf("[+] Test on %c, return = %c [+]\n", 'z', ft_tolower('z'));
+	printf("[+] Test on %c, return = %c [+]\n", '*', ft_tolower('*'));
+	printf("[+] Test on %c, return = %c [+]\n", 'Z', ft_tolower('Z'));
+	printf("[+] Test on %c, return = %c [+]\n", 'A', ft_tolower('A'));
+	printf("[+] Test on %c, return = %c [+]\n", '0', ft_tolower('0'));
+	printf("[+] Test on %c, return = %c [+]\n", '9', ft_tolower('9'));
+	printf("[+] Test on %c, return = %c [+]\n", '4', ft_tolower('4'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %c [+]\n", ft_tolower(0));
+	printf("[------] END OF FT_TOLOWER [------]\n");
+}
 
-	printf("[-] MEMALLOC [-]\n");
-	str = ft_memalloc(3);
-	printf("[+] str[0] = %d = %c [+]\n", str[0], str[0]);
-	printf("[+] str[1] = %d = %c [+]\n", str[1], str[1]);
-	printf("[+] str[2] = %d = %c [+]\n", str[2], str[2]);
-	str[0] = 'a';
-	str[1] = 'b';
-	printf("[+] str = %s [+]\n", str);
-	str = ft_memalloc(0);
-	printf("[-] END OF MEMALLOC [-]\n");
-}*/
+void		check_puts(void)
+{
+	printf("[------] FT_PUTS [------]\n");
+	ft_puts("[+] a [+]");
+	ft_puts("[+] $#@#',./,~!@~=+ [+]");
+	printf("[-] Test with null [-]\n");
+	ft_puts(NULL);
+	printf("[------] END OF FT_PUTS [------]\n");
+}
+
+
+/* PART 2 */
+
 
 void		check_strlen(void)
 {
 	char	str[5] = "abcd";
 	char	str2[3] = "op";
 
-	printf("[+] STRLEN [+]\n");
-	printf("[-] %s, sized: %d [-]\n", str, (int)ft_strlen(str));
-	printf("[-] %s, sized: %d [-]\n", str2, (int)ft_strlen(str2));
+	printf("[------] FT_STRLEN [------]\n");
+	printf("[+] %s, sized: %d [+]\n", str, (int)ft_strlen(str));
+	printf("[+] %s, sized: %d [+]\n", str2, (int)ft_strlen(str2));
 
-	printf("[-] Test with NULL [-]\n");
-	printf("[-] sized: %d [-]\n", (int)ft_strlen(0));
-	printf("[+] END OF STRLEN [+]\n");
+	printf("[+] Test with NULL [+]\n");
+	printf("[+] sized: %d [+]\n", (int)ft_strlen(0));
+	printf("[------] END OF FT_STRLEN [------]\n");
 }
 
-void		check_puts(void)
+void		check_memset(void)
 {
-	printf("[+] PUTS [+]\n");
-	ft_puts("[-] a [-]");
-	ft_puts("[-] $#@#',./,~!@~=+ [-]");
-	printf("[+] Test with null [+]\n");
-	ft_puts(NULL);
-	printf("[+] END OF PUTS [+]\n");
+	printf("[------] FT_MEMSET [------]\n");
+	printf("[+] Befor memset: %s [+]\n", "abcd");
+	printf("[+] After memset: %s [+]\n", (char*)ft_memset(ft_strdup("abcd"), 'A', 3));
+	printf("[------] END OF FT_MEMSET [------]\n");
 }
 
 void		check_memcpy(void)
@@ -195,15 +207,15 @@ void		check_memcpy(void)
 	ft_bzero(str, 2);
 	ft_bzero(str2, 6);
 
-	printf("[+] MEMCPY [+]\n");
-	printf("[-] Str1 size: %d, Content: %s [-]\n", (int)ft_strlen(str), str);
-	printf("[-] Str2 size: %d, Content: %s [-]\n", (int)ft_strlen(str2), str2);
+	printf("[------] FT_MEMCPY [------]\n");
+	printf("[+] Str1 size: %d, Content: %s [+]\n", (int)ft_strlen(str), str);
+	printf("[+] Str2 size: %d, Content: %s [+]\n", (int)ft_strlen(str2), str2);
 	ft_memcpy((void*)str, (void*)"a", 1);
 	ft_memcpy((void*)str2, (void*)"hello", 5);
-	printf("[+] Using ft_memcpy [+]\n");
-	printf("[-] Str1 size: %d, Content: %s [-]\n", (int)ft_strlen(str), str);
-	printf("[-] Str2 size: %d, Content: %s [-]\n", (int)ft_strlen(str2), str2);
-	printf("[+] END OF MEMCPY [+]\n");
+	printf("[-] Using ft_memcpy [-]\n");
+	printf("[+] Str1 size: %d, Content: %s [+]\n", (int)ft_strlen(str), str);
+	printf("[+] Str2 size: %d, Content: %s [+]\n", (int)ft_strlen(str2), str2);
+	printf("[------] END OF MEMCPY [------]\n");
 }
 
 void		check_strdup(void)
@@ -213,90 +225,39 @@ void		check_strdup(void)
 	char		s[] = "hello";
 	char		t[] = "";
 
-	printf("[+] STRDUP [+]\n");
-	printf("[-] Str init [-]\n");
+	printf("[-------] FT_STRDUP [------]\n");
+	printf("[+] Str init [+]\n");
 	str = ft_strdup(f);
-	printf("[-] Str after strdup (\"%s\") %d [-]\n", str, (int)ft_strlen(str));
+	printf("[+] Str after strdup (\"%s\") %d [+]\n", str, (int)ft_strlen(str));
 	str = ft_strdup(s);
-	printf("[-] Str after strdup (\"%s\") %d [-]\n", str, (int)ft_strlen(str));
+	printf("[+] Str after strdup (\"%s\") %d [+]\n", str, (int)ft_strlen(str));
 	str = ft_strdup(t);
-	printf("[-] Str after strdup (\"%s\") %d [-]\n", str, (int)ft_strlen(str));
-	printf("[+] END OF STRDUP [+]\n");
+	printf("[+] Str after strdup (\"%s\") %d [+]\n", str, (int)ft_strlen(str));
+	printf("[------] END OF STRDUP [------]\n");
 }
 
-void		check_memset(void)
-{
-	printf("[+] MEMSET [+]\n");
-	printf("[-] Befor memset: %s [-]\n", "abcd");
-	printf("[-] After memset: %s [-]\n", (char*)ft_memset(ft_strdup("abcd"), 'A', 3));
-	printf("[+] END OF MEMSET [+]\n");
-}
+/* PART 3 */
 
-void		check_strcat(void)
-{
-	char		str[5];
-
-	str[0] = '\0';
-	printf("[+] STRCAT [+]\n");
-	printf("[-] Str init with empy char : %s [-]\n", ft_strcat(str, ""));
-	printf("[-] Str: %s [-]\n", ft_strcat(str, "h"));
-	printf("[-] Str: %s [-]\n", ft_strcat(str, "ello"));
-	printf("[-] Str: %s [-]\n", ft_strcat(str, "!"));
-	printf("[+] END OF STRCAT [+]\n");
-}
 
 void		check_cat(void)
 {
 	int		fd;
 
 	fd = open("Makefile", O_RDONLY);
-	printf("[+] CAT [+]\n");
+	printf("[------] FT_CAT [------]\n");
 	ft_cat(0); // Ctrl + D to Continue !
 	ft_cat(open(__FILE__, O_RDONLY));
 	ft_cat(fd);
 	ft_cat(-42);
-	printf("[+] END OF CAT [+]\n");
+	printf("[------] END OF FT_CAT [------]\n");
 	close(fd);
 }
 
-/*void		check_b(void)
-{
-	int			fd;
-	char		dst[] = "Swagg de Poule !!";
-
-	printf("[+] FT_LOG [+]\n");
-	ft_filezero("log.txt");
-	fd = open("log.txt", O_RDONLY);
-	ft_log("YO");
-	ft_log("YOO");
-	ft_log("YOLO");
-	ft_log("SWAGG");
-	printf("[+] Lecture de log.txt [+]\n");
-	ft_cat(fd);
-	close(fd);
-	ft_filezero("log.txt");
-	printf("[+] Lecture de log.txt apres le filezero[+]\n");
-	fd = open("log.txt", O_RDONLY);
-	ft_cat(fd);
-	close(fd);
-	ft_log("Maintenant j'ai juste une ligne");
-	printf("[+] Lecture de log.txt [+]\n");
-	fd = open("log.txt", O_RDONLY);
-	ft_cat(fd);
-	close(fd);
-	printf("[+] END OF FT_LOG [+]\n");
-	printf("\n");
-	printf("[+] FT_STRCPY [+]\n");
-	printf("%s\n", ft_strcpy(dst, "[-] Yolo [-]"));
-	printf("%s\n", ft_strcpy(dst, "[-] Yo [-]"));
-	printf("%s\n", ft_strcpy(dst, "[-] lo [-]"));
-	printf("%s\n", ft_strcpy(dst, "[-] Lolement votre [-]"));
-	printf("[+] END OF FT_STRCPY [+]\n");
-}*/
+/* BONUS */
 
 void		check_isspace(void)
 {
-	printf("[-] ISSPACE [-]\n");
+	printf("[------] FT_ISSPACE [------]\n");
 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isspace('a'));
 	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isspace('Z'));
 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isspace('*'));
@@ -308,48 +269,48 @@ void		check_isspace(void)
 	printf("[+] Test on \\r, return = %d [+]\n", ft_isspace('\r'));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isspace(0));
-	printf("[-] END OF ISSPACE [-]\n");
+	printf("[------] END OF FT_ISSPACE [------]\n");
 }
 
 void		check_abs(void)
 {
-	printf("[-] ABS [-]\n");
+	printf("[------] FT_ABS [-------]\n");
 	printf("[+] Test on %d, return = %d [+]\n", -1, ft_abs(-1));
 	printf("[+] Test on %d, return = %d [+]\n", 0, ft_abs(0));
 	printf("[+] Test on %d, return = %d [+]\n", 1000000, ft_abs(1000000));
 	printf("[+] Test on %d, return = %d [+]\n", -15, ft_abs(-15));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_abs(0));
-	printf("[-] END OF ABS [-]\n");
+	printf("[------] END OF FT_ABS [------]\n");
 }
 
 void		check_max(void)
 {
-	printf("[-] MAX [-]\n");
+	printf("[------] FT_MAX [------]\n");
 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_max(1, 2));
 	printf("[+] Test on [-3, 0], return = %d [+]\n", ft_max(-3, 0));
 	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_max(-15, -30));
 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_max(-5, -5));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_max(0, 0));
-	printf("[-] END OF MAX [-]\n");
+	printf("[------] END OF FT_MAX [------]\n");
 }
 
 void		check_min(void)
 {
-	printf("[-] MIN [-]\n");
+	printf("[------] FT_MIN [------]\n");
 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_min(1, 2));
 	printf("[+] Test on [-3, 3], return = %d [+]\n", ft_min(-3, 3));
 	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_min(-30, -15));
 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_min(-5, -5));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_min(0, 0));
-	printf("[-] END OF MIN [-]\n");
+	printf("[------] END OF FT_MIN [------]\n");
 }
 
 void		check_isupper(void)
 {
-	printf("[-] ISUPPER [-]\n");
+	printf("[------] FT_ISUPPER [------]\n");
 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isupper('a'));
 	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isupper('z'));
 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isupper('*'));
@@ -360,12 +321,12 @@ void		check_isupper(void)
 	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isupper('4'));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isupper(0));
-	printf("[-] END OF ISUPPER [-]\n");
+	printf("[------] END OF FT_ISUPPER [------]\n");
 }
 
 void		check_islower(void)
 {
-	printf("[-] ISLOWER [-]\n");
+	printf("[------] FT_ISLOWER [------]\n");
 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_islower('a'));
 	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_islower('z'));
 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_islower('*'));
@@ -376,43 +337,48 @@ void		check_islower(void)
 	printf("[+] Test on %c, return = %d [+]\n", '4', ft_islower('4'));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_islower(0));
-	printf("[-] END OF ISLOWER [-]\n");
+	printf("[------] END OF FT_ISLOWER [------]\n");
 }
 
 int			main(void)
 {
-	//check_digit();
-	//printf("\n");
-	//check_alpha();
-	//printf("\n");
-	//check_alnum();
-	//printf("\n");
-	//check_tolower();
-	//printf("\n");
-	//check_toupper();
-	//printf("\n");
-	//check_puts();
-	//printf("\n");
-	//check_isascii();
-	//printf("\n");
-	//check_bzero();
-	//printf("\n");
-	//check_memalloc();
-	//printf("\n");
-	//check_strlen();
-	//printf("\n");
-	//check_strdup();
-	//printf("\n");
-	//check_memset();
-	//printf("\n");
-	//check_memcpy();
-	//printf("\n");
-	//check_strcat();
-	//printf("\n");
-	//check_b();
-	//printf("\n");
-	//check_isprint();
-	//printf("\n");
+	//PART 1
+	check_bzero();
+	printf("\n");
+	check_strcat();
+	printf("\n");
+	check_alpha();
+	printf("\n");
+	check_digit();
+	printf("\n");
+	check_alnum();
+	printf("\n");
+	check_isascii();
+	printf("\n");
+	check_isprint();
+	printf("\n");
+	check_tolower();
+	printf("\n");
+	check_toupper();
+	printf("\n");
+	check_puts();
+	printf("\n");
+
+	// PART 2
+	check_strlen();
+	printf("\n");
+	check_memset();
+	printf("\n");
+	check_memcpy();
+	printf("\n");
+	check_strdup();
+	printf("\n");
+
+	// PART 3
+	check_cat();
+	printf("\n");
+
+	// BONUS
 	check_isspace();
 	printf("\n");
 	check_abs();
@@ -421,9 +387,10 @@ int			main(void)
 	printf("\n");
 	check_max();
 	printf("\n");
-	//check_isupper();
-	//printf("\n");
-	//check_islower();
-	//printf("\n");
+	check_isupper();
+	printf("\n");
+	check_islower();
+	printf("\n");
+
 	return 0;
 }
