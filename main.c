@@ -245,6 +245,7 @@ void		check_cat(void)
 
 	fd = open("Makefile", O_RDONLY);
 	printf("[------] FT_CAT [------]\n");
+	printf("[------] Press Ctrl + D to Continue [------] \n");
 	ft_cat(0); // Ctrl + D to Continue !
 	ft_cat(open(__FILE__, O_RDONLY));
 	ft_cat(fd);
@@ -275,10 +276,12 @@ void		check_isspace(void)
 void		check_abs(void)
 {
 	printf("[------] FT_ABS [-------]\n");
-	printf("[+] Test on %d, return = %d [+]\n", -1, ft_abs(-1));
 	printf("[+] Test on %d, return = %d [+]\n", 0, ft_abs(0));
-	printf("[+] Test on %d, return = %d [+]\n", 1000000, ft_abs(1000000));
-	printf("[+] Test on %d, return = %d [+]\n", -15, ft_abs(-15));
+	printf("[+] Test on %d, return = %d [+]\n", 1, ft_abs(1));
+	printf("[+] Test on %d, return = %d [+]\n", 10, ft_abs(10));
+	printf("[+] Test on %d, return = %d [+]\n", -1, ft_abs(-1));
+	printf("[+] Test on %d, return = %d [+]\n", -5, ft_abs(-5));
+	printf("[+] Test on %d, return = %d [+]\n", -20, ft_abs(-20));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_abs(0));
 	printf("[------] END OF FT_ABS [------]\n");
@@ -343,6 +346,7 @@ void		check_islower(void)
 int			main(void)
 {
 	//PART 1
+	printf("[------] PART 1 [------] \n");
 	check_bzero();
 	printf("\n");
 	check_strcat();
@@ -365,6 +369,7 @@ int			main(void)
 	printf("\n");
 
 	// PART 2
+	printf("[------] PART 2 [------] \n");
 	check_strlen();
 	printf("\n");
 	check_memset();
@@ -375,10 +380,12 @@ int			main(void)
 	printf("\n");
 
 	// PART 3
+	printf("[------] PART 3 [------] \n");
 	check_cat();
 	printf("\n");
 
 	// BONUS
+	printf("[------] BONUS [------] \n");
 	check_isspace();
 	printf("\n");
 	check_abs();
@@ -392,5 +399,6 @@ int			main(void)
 	check_islower();
 	printf("\n");
 
+	printf("[------] END OF TESTS [------] \n");
 	return 0;
 }
