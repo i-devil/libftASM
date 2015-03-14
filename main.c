@@ -6,7 +6,7 @@
 /*   By: ide-vill <iris.devillars@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/06 16:42:20 by ide-vill          #+#    #+#             */
-/*   Updated: 2015/03/06 16:43:14 by ide-vill         ###   ########.fr       */
+/*   Updated: 2015/03/14 15:14:01 by ide-vill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -391,9 +391,9 @@ int			main(void)
 	printf("\n");
 
 	// PART 3
-	printf("[------] PART 3 [------] \n");
-	check_cat();
-	printf("\n");
+	//printf("[------] PART 3 [------] \n");
+	//check_cat();
+	//printf("\n");
 
 	// BONUS
 	printf("[------] BONUS [------] \n");

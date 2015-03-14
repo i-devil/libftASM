@@ -9,6 +9,7 @@ _ft_abs:
 		ret
 
 _neg:
-		sub		edi, 0
+		not		edi
+		add		edi, 1
 		mov		eax, edi
 		ret
