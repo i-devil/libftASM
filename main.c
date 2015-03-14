@@ -194,7 +194,7 @@ void		check_strlen(void)
 void		check_memset(void)
 {
 	printf("[------] FT_MEMSET [------]\n");
-	printf("[+] Befor memset: %s [+]\n", "abcd");
+	printf("[+] Before memset: %s [+]\n", "abcd");
 	printf("[+] After memset: %s [+]\n", (char*)ft_memset(ft_strdup("abcd"), 'A', 3));
 	printf("[------] END OF FT_MEMSET [------]\n");
 }
